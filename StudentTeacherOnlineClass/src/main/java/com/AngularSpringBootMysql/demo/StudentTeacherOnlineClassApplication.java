@@ -8,6 +8,7 @@ public class StudentTeacherOnlineClassApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudentTeacherOnlineClassApplication.class, args);
+		System.out.println("Welcome To StudentTeacherOnlineClass");
 	}
 
 }
