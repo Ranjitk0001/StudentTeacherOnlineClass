@@ -1,11 +1,14 @@
 package com.AngularSpringBootMysql.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.management.AttributeNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,10 +54,19 @@ public class StudentController {
 		student.setSclass(studentDetails.getSclass());
 		 
 		Student savedStudent= studentRepository.save(student);
-		 
 		 return ResponseEntity.ok(savedStudent);
+	 }
+	
+	  
+    @DeleteMapping("/{id}")
+	 public ResponseEntity<Map<String,Boolean>>deleteAdmin(@PathVariable long id) throws AttributeNotFoundException{
+    	Student student=studentRepository.findById(id).orElseThrow(()->new AttributeNotFoundException("student not found with id " + id));
+		 studentRepository.delete(student);
 		 
-		
+		 Map<String ,Boolean> responnse= new HashMap<String,Boolean>();
+		 responnse.put("Deleted", Boolean.TRUE);
+		 
+		 return  ResponseEntity.ok(responnse);
 	 }
 
 }
