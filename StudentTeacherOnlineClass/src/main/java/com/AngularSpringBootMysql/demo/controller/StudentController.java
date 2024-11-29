@@ -32,5 +32,11 @@ public class StudentController {
 		  return studentRepository.findAll();
 	  }
 	
+	@GetMapping("/{id}")
+    public ResponseEntity<Student>getPatientById(@PathVariable long id) throws AttributeNotFoundException {
+		Student student=studentRepository.findById(id).orElseThrow(()->new AttributeNotFoundException("Student not found with id"+id));
+   	
+   	return ResponseEntity.ok(student);
+    }
 
 }
