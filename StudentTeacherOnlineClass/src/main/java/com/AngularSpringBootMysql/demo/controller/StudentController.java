@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,5 +39,22 @@ public class StudentController {
    	
    	return ResponseEntity.ok(student);
     }
+	
+	@PutMapping("/{id}")
+	 public ResponseEntity<Student>updatePatient(@PathVariable long id,@RequestBody Student studentDetails) throws AttributeNotFoundException{
+		Student student=studentRepository.findById(id).orElseThrow(()->new AttributeNotFoundException("Student not found with id " + id));
+		
+		student.setAge(studentDetails.getAge());
+		student.setSname(studentDetails.getSname());
+		student.setEmail(studentDetails.getEmail());
+		student.setPassword(studentDetails.getPassword());
+		student.setSclass(studentDetails.getSclass());
+		 
+		Student savedStudent= studentRepository.save(student);
+		 
+		 return ResponseEntity.ok(savedStudent);
+		 
+		
+	 }
 
 }
