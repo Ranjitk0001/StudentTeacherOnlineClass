@@ -8,7 +8,7 @@
         <th>sclass</th>
         <th>email</th>
         <th>password</th>
-        
+        <th>Update</th>  
       
     </tr>
 </thead>
@@ -20,6 +20,9 @@
     <td>{{student.sclass}}</td>
     <td>{{student.email}}</td>
     <td>{{student.password}}</td> 
+    <td>
+        <button (click)="update(student.sno)" class="btn btn-info">Update</button>
+      </td>
 </tr>
 
 </tbody>

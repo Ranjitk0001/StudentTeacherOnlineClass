@@ -1,0 +1,30 @@
+<p>update-student works!</p>
+<form (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text"  class="form-control" id="name" name="name" placeholder="Enter the Name" [(ngModel)]="student.sname">
+    </div>
+    
+    <div class="form-group">
+      <label for="">Age</label>
+      <input type="text"  class="form-control"id="age" name="age" placeholder="Enter the Age" [(ngModel)]="student.age">
+    </div>
+
+    <div class="form-group">
+      <label for="">Student class</label>
+      <input type="text"  class="form-control" id="sclass" name="sclass" placeholder="Enter the sclass" [(ngModel)]="student.sclass">
+    </div>
+    
+    <div class="form-group">
+      <label for="">email</label>
+      <input type="text"  class="form-control" id="email" name="email" placeholder="Enter the email" [(ngModel)]="student.email">
+    </div>
+
+    <div class="form-group">
+       <label for="">password</label>
+       <input type="text"  class="form-control" id="password" name="password" placeholder="Enter the password" [(ngModel)]="student.password">
+     </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+   </form>

@@ -19,4 +19,13 @@ private baseUrl="http://localhost:8084/api/v1/"
    createStudent(student:Student):Observable<Student>{
     return this.httpClient.post<Student>(`${this.baseUrl}`+'insert',student)
    }
+
+   getStudentById(sno:number):Observable<Student>{
+    return this.httpClient.get<Student>(`${this.baseUrl}${sno}`)
+   }
+
+   updateStudent(sno:number,student:Student):Observable<Object>{
+    return this.httpClient.put<Student>(`${this.baseUrl}${sno}`,student)
+   }
+
 }
