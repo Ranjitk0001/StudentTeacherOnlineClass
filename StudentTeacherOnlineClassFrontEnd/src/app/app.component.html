@@ -1,31 +1,29 @@
 
       <h1>Hello, {{ title }}</h1>
-      <table class="table table-striped">
-        <thead class="table-header">
-        <tr>
-            <th>Id</th>
-            <th>Drug Name</th>
-            <th>Stock</th>
-            
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <!-- <tbody>
-    <tr *ngFor="let medicine of medicines">
-        <td>{{medicine.id}}</td>
-        <td>{{medicine.drugName}}</td>
-        <td>{{medicine.stock}}</td>
+      <nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
         
-        <td>
-          <button (click)="update(medicine.id)" class="btn btn-info">Update</button>
-        </td>
-        <td>
-          <button (click)="delete(medicine.id)" class="btn btn-danger">Delete</button>
-        </td>
-    </tr>
-    
-    </tbody> -->
-    </table>
-
+            <a style="color: white;" class="navbar-brand" href="#">{{ title }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                    <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/Student">Student</a>
+                  </li>        
+        
+                <li class="nav-item">
+                    <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/home">Back</a>
+                  </li>
+        
+                
+                
+              </ul>
+        
+              
+            </div>
+          
+          </nav>
+ 
       <router-outlet />
