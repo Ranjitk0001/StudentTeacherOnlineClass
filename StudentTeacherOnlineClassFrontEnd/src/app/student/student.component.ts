@@ -24,5 +24,12 @@ export class StudentComponent implements OnInit{
     update(sno:number){
       this.router.navigate(['updateStudent',sno])
     
-  }
+    }
+
+    delete(id:number){
+      this.studentService.deleteStudent(id).subscribe(data=>{
+        // console.log(data);
+        this.getStudent();
+       })
+    }
   }

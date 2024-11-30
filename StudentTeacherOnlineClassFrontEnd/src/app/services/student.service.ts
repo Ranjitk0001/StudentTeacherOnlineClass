@@ -28,4 +28,8 @@ private baseUrl="http://localhost:8084/api/v1/"
     return this.httpClient.put<Student>(`${this.baseUrl}${sno}`,student)
    }
 
+   deleteStudent(sno:number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseUrl}${sno}`)
+   }
+
 }

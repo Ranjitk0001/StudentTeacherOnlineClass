@@ -9,6 +9,7 @@
         <th>email</th>
         <th>password</th>
         <th>Update</th>  
+        <th>Delete</th> 
       
     </tr>
 </thead>
@@ -22,6 +23,10 @@
     <td>{{student.password}}</td> 
     <td>
         <button (click)="update(student.sno)" class="btn btn-info">Update</button>
+      </td>
+
+      <td>
+        <button (click)="delete(student.sno)" class="btn btn-info">Delete</button>
       </td>
 </tr>
 
