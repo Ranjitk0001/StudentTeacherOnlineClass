@@ -15,4 +15,8 @@ private baseUrl="http://localhost:8084/api/v1/"
   getMedicine ():Observable<Student[]>{
     return this.httpClient.get<Student[]>(`${this.baseUrl}`+'showlist')
    }
+
+   createStudent(student:Student):Observable<Student>{
+    return this.httpClient.post<Student>(`${this.baseUrl}`+'insert',student)
+   }
 }
